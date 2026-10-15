@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RuleBase>
+	<ClssHrchy EvalInvalid="1" MinProb="0.10000000000000001" NNSlope="0.20000000000000001" RdiResamplOptns="3">
+		<MapUnit>
+			<Map MapName="main" Unit="1"></Map>
+		</MapUnit>
+		<AllClss>
+			<Clss id="1" name="Sea" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751803994" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="0" G="0" B="255"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="2" name="Limnothalassa" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804006" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="0" G="255" B="255"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="3" name="Coastline" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804016" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="255" G="255" B="0"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="4" name="Ground" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804025" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="128" G="0" B="0"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="5" name="Crops" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804034" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="0" G="128" B="128"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="6" name="High Veg." flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804048" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="0" G="128" B="0"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="7" name="Low Veg." flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804061" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="0" G="255" B="0"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="8" name="Buildings" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804073" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="192" G="220" B="192"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+			<Clss id="9" name="Lake" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="" tChngTime="1751804084" bShow="0" Trans="0." sComment="">
+				<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+				<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+				<Color R="128" G="0" B="128"></Color>
+				<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+			</Clss>
+		</AllClss>
+		<PropTree version="20100426">
+			<AllProps></AllProps>
+			<UserGroups></UserGroups>
+		</PropTree>
+		<Brightness>
+			<Map MapName="main">
+				<ChnlWghtBrght>
+					<BrghtWght val="1." chnl="0"></BrghtWght>
+					<BrghtWght val="1." chnl="1"></BrghtWght>
+					<BrghtWght val="1." chnl="2"></BrghtWght>
+					<BrghtWght val="1." chnl="3"></BrghtWght>
+				</ChnlWghtBrght>
+			</Map>
+		</Brightness>
+		<AllVrblClss></AllVrblClss>
+		<AllSubClss>
+			<Clss Id="1" PrfdGrp="1">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="2" PrfdGrp="2">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="3" PrfdGrp="3">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="4" PrfdGrp="4">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="5" PrfdGrp="5">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="6" PrfdGrp="6">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="7" PrfdGrp="7">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="8" PrfdGrp="8">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+			<Clss Id="9" PrfdGrp="9">
+				<SubClss></SubClss>
+				<SubGrp></SubGrp>
+			</Clss>
+		</AllSubClss>
+		<AllTerm>
+			<Term TermEvalType="0">
+				<TermBase ClssId="1" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="2" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="3" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="4" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="5" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="6" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="7" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="8" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+			<Term TermEvalType="0">
+				<TermBase ClssId="9" flags="0" sComment="">
+					<Weight>
+						<DValue value="1" type="int"></DValue>
+					</Weight>
+				</TermBase>
+			</Term>
+		</AllTerm>
+	</ClssHrchy>
+	<Smpls>
+		<AllClss>
+			<SmplList ClssId="1"></SmplList>
+			<SmplList ClssId="2"></SmplList>
+			<SmplList ClssId="3"></SmplList>
+			<SmplList ClssId="4"></SmplList>
+			<SmplList ClssId="5"></SmplList>
+			<SmplList ClssId="6"></SmplList>
+			<SmplList ClssId="7"></SmplList>
+			<SmplList ClssId="8"></SmplList>
+			<SmplList ClssId="9"></SmplList>
+		</AllClss>
+		<AllProp></AllProp>
+	</Smpls>
+	<RuleBaseLcnsIds></RuleBaseLcnsIds>
+</RuleBase>

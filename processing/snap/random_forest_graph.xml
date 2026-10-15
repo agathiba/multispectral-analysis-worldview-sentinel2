@@ -1,0 +1,90 @@
+<!--
+  SNAP graph for the Sentinel-2 Random Forest classification.
+  Reconstructed from the processing history stored in the BEAM-DIMAP product
+  metadata (SNAP 12). Run with:
+      gpt random_forest_graph.xml -Pinput=<S2 L2A subset .dim> -Poutput=<output .dim>
+  The input product must contain the training polygons as vector data
+  (one vector per class, named as in "trainingVectors").
+-->
+<graph id="S2_RandomForest">
+  <version>1.0</version>
+
+  <node id="Read">
+    <operator>Read</operator>
+    <parameters>
+      <file>${input}</file>
+      <formatName>BEAM-DIMAP</formatName>
+    </parameters>
+  </node>
+
+  <!-- All bands resampled to the grid of the reference band B1 -->
+  <node id="Resample">
+    <operator>Resample</operator>
+    <sources><sourceProduct refid="Read"/></sources>
+    <parameters>
+      <referenceBand>B1</referenceBand>
+      <upsampling>Nearest</upsampling>
+      <downsampling>First</downsampling>
+      <flagDownsampling>First</flagDownsampling>
+      <resampleOnPyramidLevels>true</resampleOnPyramidLevels>
+    </parameters>
+  </node>
+
+  <!-- Spectral index feature bands (same expressions as in the original product) -->
+  <node id="BandMaths">
+    <operator>BandMaths</operator>
+    <sources><sourceProduct refid="Resample"/></sources>
+    <parameters>
+      <targetBands>
+        <targetBand><name>NDVI_S2</name><type>float32</type><expression>(B8 - B4) / (B8 + B4)</expression></targetBand>
+        <targetBand><name>new_band_2</name><type>float32</type><expression>(B8 - B4) / (B8 + B4)</expression></targetBand>
+        <targetBand><name>new_band_7</name><type>float32</type><expression>2.5 * ((B8 - B4) / (B8 + 6*B4 - 7.5*B2 + 1))</expression></targetBand>
+        <targetBand><name>new_band_9</name><type>float32</type><expression>2.5 * ((B8 - B4) / (B8 + 6*B4 - 7.5*B2 + 1))</expression></targetBand>
+        <targetBand><name>new_band_13</name><type>float32</type><expression>((B4 * B8) - (B2 * B3)) / ((B4 * B8) + (B2 * B3))</expression></targetBand>
+        <targetBand><name>new_band_14</name><type>float32</type><expression>B8 / B4</expression></targetBand>
+        <targetBand><name>new_band_16</name><type>float32</type><expression>B8 / B4</expression></targetBand>
+        <targetBand><name>new_band_22</name><type>float32</type><expression>(B4 * B8) / B3</expression></targetBand>
+      </targetBands>
+    </parameters>
+  </node>
+
+  <node id="BandMerge">
+    <operator>BandMerge</operator>
+    <sources>
+      <sourceProduct refid="Resample"/>
+      <sourceProduct.1 refid="BandMaths"/>
+    </sources>
+  </node>
+
+  <node id="Random-Forest-Classifier">
+    <operator>Random-Forest-Classifier</operator>
+    <sources><sourceProduct refid="BandMerge"/></sources>
+    <parameters>
+      <treeCount>10</treeCount>
+      <numTrainSamples>5000</numTrainSamples>
+      <savedClassifierName>newClassifier</savedClassifierName>
+      <doLoadClassifier>false</doLoadClassifier>
+      <labelSource>VectorNodeName</labelSource>
+      <trainOnRaster>false</trainOnRaster>
+      <trainingVectors>Sea,High Vegetation,Limnothalassa,Buildings,Lake,Coastline,Low Vegetation,Ground,Crops</trainingVectors>
+      <featureBands>NDVI_S2,new_band_2,new_band_7,new_band_9,new_band_13,new_band_14,new_band_16,new_band_22</featureBands>
+      <evaluateClassifier>true</evaluateClassifier>
+      <evaluateFeaturePowerSet>false</evaluateFeaturePowerSet>
+      <minPowerSetSize>2</minPowerSetSize>
+      <maxPowerSetSize>7</maxPowerSetSize>
+      <doClassValQuantization>true</doClassValQuantization>
+      <minClassValue>0.0</minClassValue>
+      <classValStepSize>5.0</classValStepSize>
+      <classLevels>101</classLevels>
+    </parameters>
+  </node>
+
+  <node id="Write">
+    <operator>Write</operator>
+    <sources><sourceProduct refid="Random-Forest-Classifier"/></sources>
+    <parameters>
+      <file>${output}</file>
+      <formatName>BEAM-DIMAP</formatName>
+    </parameters>
+  </node>
+</graph>
